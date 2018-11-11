@@ -13,6 +13,21 @@ function getData(){
 // api: OpenWeatherMap
 
 function jsonLoaded(obj) {
-        console.log("obj = " + obj);
-        console.log("obj stringified = " + JSON.stringify(obj));
+    console.log("obj = " + obj);
+    console.log("obj stringified = " + JSON.stringify(obj));
+    let name = obj.name;
+    let temp = obj.main.temp;
+    let button = document.querySelector("#getIt");
+    button.innerHTML = name + " has a temperature of " + kelvinToFahrenheit(temp) + " right now.";
+    //debugger;
+}
+
+function kelvinToFahrenheit(value) {
+    value = parseFloat(value);
+    return ((value - 273.15) * 1.8 + 32).toPrecision(2);
+}
+
+function kelvinToCelcius(value) {
+    value = parseFloat(value);
+    return (value - 273.15).toPrecision(2);
 }
