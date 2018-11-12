@@ -76,7 +76,7 @@ function kelvinToCelcius(value) {
     return (value - 273.15).toPrecision(2);
 }
 
-// Get 3-hour forecast
+// Get 12-hour forecast
 function loadForecast(obj) {
     console.log("obj stringified = " + JSON.stringify(obj));
     let i;
@@ -144,8 +144,27 @@ function getTimeUsingLatLng(lat, lng) {
     });
 }
 
+// When click button, change the data
 function buttonClick(button) {
-    button.active();
     let buttonId = button.id;
-    
+    let navBar = document.querySelector("#navBar");
+
+    // Change the button to inactive
+    let active = document.getElementsByClassName("active");
+    active[0].className = active[0].className.replace(" active", "");
+
+    // Change the previous active one to inactive and the clicked one to active
+    button.className += " active";
+
+    switch (buttonId){
+        case "next12Hrs": 
+
+        break;
+        case "next24Hrs": 
+
+        break;
+        case "threeDays": 
+
+        break;
+    }
 }
