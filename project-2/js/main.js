@@ -15,17 +15,26 @@ function getData(){
 // api: OpenWeatherMap
 
 function jsonLoaded(obj) {
-    console.log("obj = " + obj);
+    // console.log("obj = " + obj);
     console.log("obj stringified = " + JSON.stringify(obj));
-    let name = obj.name;
+    let cityName = obj.name;
+    let countryName = obj.sys.country;
+    let cityNameHeader = document.querySelector("#cityName");
+    let countrynameHeader = document.querySelector("#countryName");
+    cityNameHeader.innerHTML = cityName;
+    countrynameHeader.innerHTML = countryName;
+
+    // Set the current temp
     let temp = obj.main.temp;
-    let button = document.querySelector("#getIt");
-    button.innerHTML = name + " has a temperature of " + kelvinToFahrenheit(temp) + " right now.";
-    //debugger;
+    let currentTemp = document.querySelector("#currentTempLarge");
+    currentTemp.innerHTML = kelvinToCelcius(temp) + "°";
+    let unit = document.createElement("span");
+    unit.innerHTML = "C";
+    currentTemp.appendChild(unit);
 }
 
 function loadCityList(obj) {
-    
+
 }
 
 function kelvinToFahrenheit(value) {
