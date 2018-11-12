@@ -31,6 +31,7 @@ function jsonLoaded(obj) {
     let unit = document.createElement("span");
     unit.innerHTML = "C";
     currentTemp.appendChild(unit);
+    debugger;
 }
 
 function loadCityList(obj) {
