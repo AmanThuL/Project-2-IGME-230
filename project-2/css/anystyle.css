@@ -204,7 +204,91 @@ color: #FFF;
 color: #FFEB3B;
 }
 
-/*-- //Index-Page-Styling --*/
+#navBar{
+    display:flex;
+}
+
+#next12Hrs:hover{
+    color:#ffffff;
+    background-color:transparent;
+    border: 2px solid #555555;
+}
+
+#next24Hrs:hover{
+    color:#ffffff;
+    background-color:transparent;
+    border: 2px solid #555555;
+}
+
+#threeDays:hover{
+    color:#ffffff;
+    background-color:transparent;
+    border: 2px solid #555555;
+}
+
+.buttons{
+    margin:1em 1em 0em 1em;
+    padding:1em 0em;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor:pointer;
+    border-radius: 1em;
+    flex-grow: 1;
+}
+
+#searchAndWeather{
+    width:100%;
+}
+
+#emptyRight{
+    float:right;
+    width: 230px;
+}
+
+#nothing
+{
+    color:transparent;
+}
+
+/* Add a black background color to the top navigation bar */
+.topnav {
+    float:left;
+    overflow: hidden;
+    width:230px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+    background-color: #2196F3;
+    color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+    float: left;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
 
 
 
@@ -345,173 +429,71 @@ h1 {
 }
 
 
-@media screen and (max-width: 533px) {
-h1 {
-    font-size: 33px;
-}
-}
-
-
 @media screen and (max-width: 480px) {
-
 h1 {
     font-size: 28px;
     letter-spacing: 2px;
 }
-
 .container {
     margin-bottom: 20px;
 }
-
 .forecast-icon {
     margin: 40px 0 10px;
 }
-
 .forecast-icon img {
     width: 100px;
 }
-
 .today-weather h3 {
     font-size: 40px;
 }
-
 .city {
     min-height: 450px;
 }
-
 .title h2 {
     font-size: 25px;
 }
-
 .title h3 {
     font-size: 14px;
 }
-
 .date-time {
     width: 100%;
     padding: 0;
 }
-
 .dmy {
     padding: 0;
     margin-bottom: 35px;
     text-align: center;
     width: 100%;
 }
-
 div#txt {
     font-size: 30px;
 }
-
 .date {
     font-size: 22px;
 }
-
 .temperature {
     text-align: center;
     width: 100%;
 }
-
 .copyright {
     padding: 20px;
 }
-
 .temperature p {
     font-size: 60px;
     padding-bottom: 15px;
 }
-
 .forecast-icon img {
     width: 65px;
 }
-
 .today-weather h3 {
     font-size: 30px;
 }
-
 .copyright p {
     line-height: 25px;
     font-size: 13px;
 }
 }
 
-@media screen and (max-width: 375px) {
-h1 {
-    font-size: 26px;
-    line-height: 1.5em;
-    letter-spacing: 0;
-}
-
-.city {
-    min-height: 315px;
-}
-
-.dmy {
-    margin-bottom: 30px;
-}
-
-.date {
-    font-size: 18px;
-}
-
-.temperature p {
-    padding-bottom: 15px;
-}
-}
-
-#searchAndWeather{
-    width:100%;
-}
-
-#emptyRight{
-    float:right;
-    width: 230px;
-}
-
-#nothing
-{
-    color:transparent;
-}
-
-/* Add a black background color to the top navigation bar */
-.topnav {
-    float:left;
-    overflow: hidden;
-    width:230px;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-/* Style the "active" element to highlight the current page */
-.topnav a.active {
-    background-color: #2196F3;
-    color: white;
-}
-
-/* Style the search box inside the navigation bar */
-.topnav input[type=text] {
-    float: left;
-    padding: 6px;
-    border: none;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
-}
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 600px) {
