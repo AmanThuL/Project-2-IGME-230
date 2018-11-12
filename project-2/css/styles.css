@@ -397,7 +397,7 @@ h1 {
 }
 
 
-@media screen and (max-width: 640px) {
+/* @media screen and (max-width: 640px) {
 h1 {
     font-size: 30px;
     margin-top: 45px;
@@ -411,10 +411,10 @@ div#txt {
 .temperature p {
     padding-bottom: 10px;
 }
-}
+} */
 
 
-@media screen and (max-width: 603px) {
+@media screen and (max-width: 1800px) {
 h1 {
     font-size: 35px;
 }
@@ -534,37 +534,3 @@ div#txt {
         border: 1px solid #cccccc;
     }
 }
-
-
-.search-wrapper {
-    position: relative;
-    width: 350px;
-    height: 300px;
-    margin: 0 auto;
-    background-color: #e6e6e6;
-  }
-  
-  .search {
-    position: relative;
-    width: 200px;
-    margin: 0 auto;
-    padding: 50px 0;
-    text-align: center;
-  }
-  .search__circle {
-    width: 100px;
-    height: 100px;
-    border: 20px solid #333;
-    border-radius: 100px;
-  }
-  .search__rectangle {
-    position: absolute;
-    right: 0;
-    bottom: 30px;
-    width: 70px;
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-    border: 12px solid #333;
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-  }
