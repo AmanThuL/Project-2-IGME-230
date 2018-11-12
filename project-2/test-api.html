@@ -27,15 +27,15 @@
     <h1>Weather Forecast</h1>
 
     <div id="searchAndWeather">
-        <div class="topnav">
-            <input type="text" id="locationInput" placeholder="Search Location..." onkeydown="reloadData(this)"/>
-        </div>
 
         <!-- Container -->
         <div class="container">
 
             <!-- City -->
             <div class="city">
+                <section class="topnav">
+                    <input type="text" id="locationInput" placeholder="Search Location..." onkeydown="reloadData(this)"/>
+                </section>
                 <div class="title">
                     <!-- City Name -->
                     <h2 id="cityName">New York City</h2>
@@ -60,9 +60,9 @@
             <!-- Forecast -->
             <div class="forecast">
                 <div id="navBar">
-                    <a href="#0" id="next12Hrs" class="buttons">12 hours</button>
-                        <a href="#0" id="next24Hrs" class="buttons">24 hours</button>
-                            <a href="#0" id="threeDays" class="buttons">3 days</button>
+                    <a href="#0" id="next12Hrs" class="buttons">12 hours</button></a>
+                    <a href="#0" id="next24Hrs" class="buttons">24 hours</button></a>
+                    <a href="#0" id="threeDays" class="buttons">3 days</button></a>
                 </div>
                 <div class="forecast-icon">
                     <img src="http://openweathermap.org/img/w/10d.png" alt="Weather Widget" id="weatherIcon">
@@ -71,10 +71,10 @@
                     <h3 id="currentWeather">Cloudy</h3>
                     <ul>
                         <li id="time-now">Now</li>
-                        <li id="time-1">09:00 <span> 22°C</span></li>
-                        <li id="time-2">12:00 <span> 24°C</span></li>
-                        <li id="time-3">15:00 <span> 23°C</span></li>
-                        <li id="time-4">18:00 <span> 20°C</span></li>
+                        <li id="time-1">09:00</li>
+                        <li id="time-2">12:00</li>
+                        <li id="time-3">15:00</li>
+                        <li id="time-4">18:00</li>
                     </ul>
                 </div>
             </div>
@@ -84,9 +84,6 @@
         </div>
         <!-- //Container -->
 
-        <div id="emptyRight">
-            <p id="nothing">You can't see me</p>
-        </div>
     </div>
 
 

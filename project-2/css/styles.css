@@ -12,7 +12,7 @@ article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, s
 }
 
 body {
-background: url("../images/background.jpg");
+background: url("../images/night.jpg");
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-position: center;
@@ -140,6 +140,7 @@ border-bottom: 1px solid #EEE;
 }
 
 .today-weather ul li {
+list-style-type: none;
 width: 74%;
 margin: 0 auto;
 line-height: 39px;
@@ -243,16 +244,6 @@ a.buttons:focus {
 
 #searchAndWeather{
     width:100%;
-}
-
-#emptyRight{
-    float:right;
-    width: 230px;
-}
-
-#nothing
-{
-    color:transparent;
 }
 
 /* Add a black background color to the top navigation bar */

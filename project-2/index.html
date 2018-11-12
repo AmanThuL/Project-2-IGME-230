@@ -7,9 +7,14 @@
     <!-- For-Mobile-Apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script type="application/x-javascript">
+    addEventListener("load", function() { 
+        setTimeout(hideURLbar, 0); 
+        }, false); 
+        function hideURLbar(){ 
+            window.scrollTo(0,1); 
+            } </script>
     <!-- //For-Mobile-Apps -->
-
 
     <title>Index Page</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
@@ -18,19 +23,19 @@
     <script src="js/time.js"></script>
 </head>
 
-<body onload="startTime(); getData()">
+<body onload="startTime(); loadPage()">
     <h1>Weather Forecast</h1>
 
     <div id="searchAndWeather">
-        <div class="topnav">
-            <input type="text" id="locationInput" placeholder="Search Location...">
-        </div>
 
         <!-- Container -->
         <div class="container">
 
             <!-- City -->
             <div class="city">
+                <section class="topnav">
+                    <input type="text" id="locationInput" placeholder="Search Location..." onkeydown="reloadData(this)"/>
+                </section>
                 <div class="title">
                     <!-- City Name -->
                     <h2 id="cityName">New York City</h2>
@@ -50,27 +55,26 @@
                     <div class="clear"></div>
                 </div>
             </div>
-            <!-- //City -->
-
+            <!-- City -->
 
             <!-- Forecast -->
             <div class="forecast">
                 <div id="navBar">
-                    <a href="#0" id="next12Hrs" class="buttons">12 hours</button>
-                    <a href="#0" id="next24Hrs" class="buttons">24 hours</button>
-                    <a href="#0" id="threeDays" class="buttons">3 days</button>
+                    <a href="#0" id="next12Hrs" class="buttons">12 hours</button></a>
+                    <a href="#0" id="next24Hrs" class="buttons">24 hours</button></a>
+                    <a href="#0" id="threeDays" class="buttons">3 days</button></a>
                 </div>
                 <div class="forecast-icon">
-                    <img src="http://openweathermap.org/img/w/10d.png" alt="New York Weather Widget">
+                    <img src="http://openweathermap.org/img/w/10d.png" alt="Weather Widget" id="weatherIcon">
                 </div>
                 <div class="today-weather">
-                    <h3>Cloudy</h3>
+                    <h3 id="currentWeather">Cloudy</h3>
                     <ul>
-                        <li>Now <span> 20°C</span></li>
-                        <li>09:00 <span> 22°C</span></li>
-                        <li>12:00 <span> 24°C</span></li>
-                        <li>15:00 <span> 23°C</span></li>
-                        <li>18:00 <span> 20°C</span></li>
+                        <li id="time-now">Now</li>
+                        <li id="time-1">09:00</li>
+                        <li id="time-2">12:00</li>
+                        <li id="time-3">15:00</li>
+                        <li id="time-4">18:00</li>
                     </ul>
                 </div>
             </div>
@@ -80,9 +84,6 @@
         </div>
         <!-- //Container -->
 
-        <div id="emptyRight">
-            <p id="nothing">You can't see me</p>
-        </div>
     </div>
 
 
