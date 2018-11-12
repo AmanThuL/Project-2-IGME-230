@@ -147,4 +147,5 @@ function getTimeUsingLatLng(lat, lng) {
 function buttonClick(button) {
     button.active();
     let buttonId = button.id;
+    
 }
