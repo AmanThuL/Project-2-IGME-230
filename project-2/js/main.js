@@ -64,7 +64,7 @@ function loadPageCurrentWeather(obj) {
         timeTemp.children[0].innerHTML = span.innerHTML;
     else
         timeTemp.appendChild(span);
-    debugger;
+    //debugger;
     // Set the current weather image
     let weatherId = obj.weather[0].icon;
     let weatherIcon = document.querySelector("#weatherIcon");
@@ -156,27 +156,27 @@ function load3DForecast(obj) {
 // }
 
 // When the user enters a new location, reload the data for the entire web page
-function reloadData(element) {
-    if (event.key === 'Enter') {
-        // cityId = element.value;
-        cityName = element.value;
-        url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
-        getData(url, loadPageCurrentWeather);
-        let activeButtonId = document.getElementsByClassName("active")[0].id;
-        switch (activeButtonId) {
-            case "next12Hrs":
-                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
-                getData(url, load12HrForecast);
-                break;
-            case "next24Hrs":
-                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
-                getData(url, load24HrForecast);
-                break;
-            case "threeDays":
-                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
-                getData(url, load3DForecast);
-                break;
-        }
+function reloadData() {
+    // cityId = element.value;
+    let element = document.querySelector("#locationInput");
+    cityName = element.value;   // Rochester,us
+    debugger;
+    url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+    getData(url, loadPageCurrentWeather);
+    let activeButtonId = document.getElementsByClassName("active")[0].id;
+    switch (activeButtonId) {
+        case "next12Hrs":
+            url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+            getData(url, load12HrForecast);
+            break;
+        case "next24Hrs":
+            url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+            getData(url, load24HrForecast);
+            break;
+        case "threeDays":
+            url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+            getData(url, load3DForecast);
+            break;
     }
 }
 

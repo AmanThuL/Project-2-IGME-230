@@ -3,19 +3,16 @@
 
 <head>
     <meta charset="utf-8" />
-
-    <!-- For-Mobile-Apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="application/x-javascript">
-    addEventListener("load", function() { 
+        addEventListener("load", function() { 
         setTimeout(hideURLbar, 0); 
         }, false); 
         function hideURLbar(){ 
             window.scrollTo(0,1); 
-            } </script>
-    <!-- //For-Mobile-Apps -->
-
+    } 
+    </script>
     <title>Index Page</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -34,7 +31,12 @@
             <!-- City -->
             <div class="city">
                 <section class="topnav">
-                    <input type="text" id="locationInput" placeholder="Search Location..." onkeydown="reloadData(this)"/>
+                    <section class="search-container">
+                        <input type="text" id="locationInput" placeholder="Search Location...">
+                        <button type="submit" onclick="reloadData()">
+                            <i class="fa fa-search"></i>
+                        </button>                      
+                    </section>
                 </section>
                 <div class="title">
                     <!-- City Name -->
@@ -52,7 +54,6 @@
                     <div class="temperature">
                         <p id="currentTempLarge"></p>
                     </div>
-                    <div class="clear"></div>
                 </div>
             </div>
             <!-- City -->
