@@ -125,6 +125,7 @@ function formatDate(date) {
 }
 
 // Using Google Time API
+// https://easycodestuff.blogspot.com/2015/05/get-time-zone-and-utc-from-latitude-and.html
 function getTimeUsingLatLng(lat, lng) {
     var times_Stamp = (Math.round((new Date().getTime()) / 1000)).toString();
     $.ajax({
