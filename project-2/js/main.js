@@ -1,3 +1,5 @@
+let cityList;
+
 function getData(){
 
     let url = "http://api.openweathermap.org/data/2.5/weather?q=London&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
@@ -20,6 +22,10 @@ function jsonLoaded(obj) {
     let button = document.querySelector("#getIt");
     button.innerHTML = name + " has a temperature of " + kelvinToFahrenheit(temp) + " right now.";
     //debugger;
+}
+
+function loadCityList(obj) {
+    
 }
 
 function kelvinToFahrenheit(value) {
