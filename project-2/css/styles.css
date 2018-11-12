@@ -189,11 +189,16 @@ a.buttons{
 }
 
 a.buttons:hover {
-    color: #FFF;
+    color: #FFFFFF;
 }
 
 a.buttons:active {
-    color: #FFF;
+    color: #FFFFFF;
+}
+
+.buttons.active{
+    color: #FFFFFF;
+    background-color: #644cad;
 }
 
 .buttons {
