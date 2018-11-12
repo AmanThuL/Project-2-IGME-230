@@ -16,8 +16,6 @@ var dayarray = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
 
 var montharray = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
 
-//document.write("" + dayarray[day] + ", " + montharray[month] + " " + daym + ", " + year + "")
-
 function startTime() {
     var today = new Date();
     var h = today.getHours();

@@ -1,13 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
+
+    <!-- For-Mobile-Apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript">
+    addEventListener("load", function() { 
+        setTimeout(hideURLbar, 0); 
+        }, false); 
+        function hideURLbar(){ 
+            window.scrollTo(0,1); 
+            } </script>
+    <!-- //For-Mobile-Apps -->
+
     <title>Index Page</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/time.js"></script>
 </head>
-<body>
-    <button id = "getIt" onclick = "getData()">Get JSON</button>
+
+<body onload="startTime(); loadPage()">
+    <h1>Weather Forecast</h1>
+
+    <div id="searchAndWeather">
+        <div class="topnav">
+            <input type="text" id="locationInput" placeholder="Search Location..." onkeydown="reloadData(this)"/>
+        </div>
+
+        <!-- Container -->
+        <div class="container">
+
+            <!-- City -->
+            <div class="city">
+                <div class="title">
+                    <!-- City Name -->
+                    <h2 id="cityName">New York City</h2>
+                    <!-- Country Name -->
+                    <h3 id="countryName">NEW YORK</h3>
+                </div>
+                <div class="date-time">
+                    <div class="dmy">
+                        <div id="txt"></div>
+                        <div></div>
+                        <div class="date">
+                        </div>
+                    </div>
+                    <div class="temperature">
+                        <p id="currentTempLarge"></p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <!-- City -->
+
+            <!-- Forecast -->
+            <div class="forecast">
+                <div id="navBar">
+                    <a href="#0" id="next12Hrs" class="buttons">12 hours</button>
+                        <a href="#0" id="next24Hrs" class="buttons">24 hours</button>
+                            <a href="#0" id="threeDays" class="buttons">3 days</button>
+                </div>
+                <div class="forecast-icon">
+                    <img src="http://openweathermap.org/img/w/10d.png" alt="Weather Widget" id="weatherIcon">
+                </div>
+                <div class="today-weather">
+                    <h3 id="currentWeather">Cloudy</h3>
+                    <ul>
+                        <li id="time-now">Now</li>
+                        <li id="time-1">09:00 <span> 22°C</span></li>
+                        <li id="time-2">12:00 <span> 24°C</span></li>
+                        <li id="time-3">15:00 <span> 23°C</span></li>
+                        <li id="time-4">18:00 <span> 20°C</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //Forecast -->
+            <div class="clear"></div>
+
+        </div>
+        <!-- //Container -->
+
+        <div id="emptyRight">
+            <p id="nothing">You can't see me</p>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="copyright">
+            <p> &copy; Christopher Lawrence and Rudy Zhang</p>
+        </div>
+    </div>
+
+    <nav></nav>
+
 </body>
+
 </html>
