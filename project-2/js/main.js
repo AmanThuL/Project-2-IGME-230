@@ -49,9 +49,9 @@ function loadPageCurrentWeather(obj) {
     // Set the current temp
     let temp = obj.main.temp;
     let currentTemp = document.querySelector("#currentTempLarge");
-    currentTemp.innerHTML = kelvinToCelcius(temp) + "°";
+    currentTemp.innerHTML = kelvinToFahrenheit(temp) + "°";
     let unit = document.createElement("span");
-    unit.innerHTML = "C";
+    unit.innerHTML = "F";
     if (currentTemp.childElementCount > 0)
         currentTemp.children[0].innerHTML = unit.innerHTML;
     else
@@ -59,7 +59,7 @@ function loadPageCurrentWeather(obj) {
 
     let timeTemp = document.querySelector("#time-now");
     let span = document.createElement("span");
-    span.innerHTML = kelvinToCelcius(temp) + "°C";
+    span.innerHTML = kelvinToFahrenheit(temp) + "°F";
     if (timeTemp.childElementCount > 0)
         timeTemp.children[0].innerHTML = span.innerHTML;
     else
@@ -100,7 +100,7 @@ function load12HrForecast(obj) {
         let timeTemp = document.querySelector(id);
         timeTemp.innerHTML = formatDate(forecastData.dt_txt);
         let span = document.createElement("span");
-        span.innerHTML = kelvinToCelcius(forecastData.main.temp) + "°C";
+        span.innerHTML = kelvinToFahrenheit(forecastData.main.temp) + "°F";
         if (timeTemp.childElementCount > 0)
             timeTemp.children[0].innerHTML = span.innerHTML;
         else
@@ -118,7 +118,7 @@ function load24HrForecast(obj) {
         let timeTemp = document.querySelector(id);
         timeTemp.innerHTML = formatDate(forecastData.dt_txt);
         let span = document.createElement("span");
-        span.innerHTML = kelvinToCelcius(forecastData.main.temp) + "°C";
+        span.innerHTML = kelvinToFahrenheit(forecastData.main.temp) + "°F";
         if (timeTemp.childElementCount > 0)
             timeTemp.children[0].innerHTML = span.innerHTML;
         else
@@ -137,7 +137,7 @@ function load3DForecast(obj) {
         // fadeInOut(id, formatDate(forecastData.dt_txt));
         timeTemp.innerHTML = formatDate(forecastData.dt_txt);
         let span = document.createElement("span");
-        span.innerHTML = kelvinToCelcius(forecastData.main.temp) + "°C";
+        span.innerHTML = kelvinToFahrenheit(forecastData.main.temp) + "°F";
         if (timeTemp.childElementCount > 0)
             timeTemp.children[0].innerHTML = span.innerHTML;
         else
