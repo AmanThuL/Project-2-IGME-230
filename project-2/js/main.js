@@ -10,9 +10,9 @@ function loadCurrentTime() {
 }
 
 function loadPage() {
-    url = "http://api.openweathermap.org/data/2.5/weather?id=2643743&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+    url = "https://api.openweathermap.org/data/2.5/weather?id=2643743&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
     getData(url, loadPageCurrentWeather);
-    url = "http://api.openweathermap.org/data/2.5/forecast?id=2643743&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+    url = "https://api.openweathermap.org/data/2.5/forecast?id=2643743&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
     getData(url, loadForecast);
 }
 
@@ -50,7 +50,7 @@ function loadPageCurrentWeather(obj) {
     // Set the current weather image
     let weatherId = obj.weather[0].icon;
     let weatherIcon = document.querySelector("#weatherIcon");
-    weatherIcon.src = "http://openweathermap.org/img/w/" + weatherId + ".png";
+    weatherIcon.src = "https://openweathermap.org/img/w/" + weatherId + ".png";
 
     // Set the current weather text
     let weatherDescription = obj.weather[0].main;
@@ -96,7 +96,7 @@ function loadForecast(obj) {
 function reloadData(element) {
     if (event.key === 'Enter') {
         let id = element.value;
-        url = "http://api.openweathermap.org/data/2.5/forecast?id=" + id + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+        url = "https://api.openweathermap.org/data/2.5/forecast?id=" + id + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
         getData(url, loadForecast);
     }
 }
