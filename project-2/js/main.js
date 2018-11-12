@@ -57,7 +57,7 @@ function loadPageCurrentWeather(obj) {
     let currentWeather = document.querySelector("#currentWeather");
     currentWeather.innerHTML = weatherDescription;
 
-    debugger;
+    // debugger;
 }
 
 function loadCityList(obj) {
@@ -80,7 +80,7 @@ function kelvinToCelcius(value) {
 function loadForecast(obj) {
     console.log("obj stringified = " + JSON.stringify(obj));
     let i;
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < 5; i++) {
         let forecastData = obj.list[i];     // Get the forecast data for each 3 hours
         let id = "#time-" + (i + 1);
         let timeTemp = document.querySelector(id);
@@ -142,4 +142,9 @@ function getTimeUsingLatLng(lat, lng) {
             return Loc_Date.toLocaleString();
         }
     });
+}
+
+function buttonClick(button) {
+    button.active();
+    let buttonId = button.id;
 }

@@ -157,7 +157,7 @@ float: right;
 padding-right: 10px;
 }
 
-.today-weather ul li:nth-child(5) {
+.today-weather ul li:nth-child(6) {
 border-bottom: none;
 }
 
@@ -192,7 +192,7 @@ a.buttons:hover {
     color: #FFF;
 }
 
-a.buttons:focus {
+a.buttons:active {
     color: #FFF;
 }
 
@@ -234,7 +234,7 @@ a.buttons:focus {
     opacity: 1;
 }
 
-.buttons:focus:before {
+.buttons:active:before {
     -webkit-transition: 0.5s all ease;
     transition: 0.5s all ease;
     left: 0;

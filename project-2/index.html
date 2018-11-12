@@ -60,21 +60,22 @@
             <!-- Forecast -->
             <div class="forecast">
                 <div id="navBar">
-                    <a href="#0" id="next12Hrs" class="buttons">12 hours</button></a>
-                    <a href="#0" id="next24Hrs" class="buttons">24 hours</button></a>
-                    <a href="#0" id="threeDays" class="buttons">3 days</button></a>
+                    <a href="#0" id="next12Hrs" class="buttons active" onclick="buttonClick(this)">12 hours</a>
+                    <a href="#0" id="next24Hrs" class="buttons" onclick="buttonClick(this)">24 hours</a>
+                    <a href="#0" id="threeDays" class="buttons" onclick="buttonClick(this)">3 days</a>
                 </div>
                 <div class="forecast-icon">
-                    <img src="https://openweathermap.org/img/w/10d.png" alt="Weather Widget" id="weatherIcon">
+                    <img src="#" alt="Weather Widget" id="weatherIcon">
                 </div>
                 <div class="today-weather">
-                    <h3 id="currentWeather">Cloudy</h3>
+                    <h3 id="currentWeather"></h3>
                     <ul>
                         <li id="time-now">Now</li>
                         <li id="time-1">09:00</li>
                         <li id="time-2">12:00</li>
                         <li id="time-3">15:00</li>
                         <li id="time-4">18:00</li>
+                        <li id="time-5">21:00</li>
                     </ul>
                 </div>
             </div>
