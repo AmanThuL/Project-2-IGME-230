@@ -251,14 +251,12 @@ a.buttons:active {
     width:100%;
 }
 
-/* Add a black background color to the top navigation bar */
 .topnav {
-    float:left;
+    float: left;
     overflow: hidden;
-    width:230px;
-}
-
-/* Style the links inside the navigation bar */
+    width: 270px;
+  }
+  
 .topnav a {
     float: left;
     display: block;
@@ -268,31 +266,51 @@ a.buttons:active {
     text-decoration: none;
     font-size: 17px;
 }
-
-/* Change the color of links on hover */
+  
 .topnav a:hover {
     background-color: #ddd;
     color: black;
 }
-
-/* Style the "active" element to highlight the current page */
+  
 .topnav a.active {
     background-color: #2196F3;
     color: white;
 }
-
-/* Style the search box inside the navigation bar */
+  
 .topnav input[type=text] {
-    float: left;
+    float:left;
     padding: 6px;
     border: none;
-    margin-top: 8px;
-    margin-right: 16px;
+    font-size: 17px; 
+}
+  
+.topnav .search-container button {
+    float: left;
+    padding: 6px 10px;
     font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+  
+.topnav .search-container button:hover {
+    background: #ccc;
 }
 
+.fa-search-plus:before{
+    content:"\f00e"
+}
 
+.fa-search-minus:before{
+    content:"\f010"
+}
 
+.fa-search:before{
+    content:"\f002"
+}
+
+#searchIcon{
+    background-image: url("../images/night.jpg");
+}
 
 
 /*-- Responsive Code --*/
@@ -516,3 +534,37 @@ div#txt {
         border: 1px solid #cccccc;
     }
 }
+
+
+.search-wrapper {
+    position: relative;
+    width: 350px;
+    height: 300px;
+    margin: 0 auto;
+    background-color: #e6e6e6;
+  }
+  
+  .search {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: center;
+  }
+  .search__circle {
+    width: 100px;
+    height: 100px;
+    border: 20px solid #333;
+    border-radius: 100px;
+  }
+  .search__rectangle {
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+    width: 70px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    border: 12px solid #333;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
