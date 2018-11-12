@@ -7,7 +7,6 @@
     <!-- For-Mobile-Apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="New York Weather Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- //For-Mobile-Apps -->
 
@@ -18,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/test.js"></script>
+    <script src="js/time.js"></script>
 </head>
 
 <body onload="startTime()">
@@ -26,7 +25,7 @@
 
     <div id="searchAndWeather">
         <div class="topnav">
-            <input type="text" placeholder="Search Location...">
+            <input type="text" id="locationInput" placeholder="Search Location...">
         </div>
 
         <!-- Container -->
@@ -43,7 +42,6 @@
                         <div id="txt"></div>
                         <div></div>
                         <div class="date">
-                            <!-- Date-JavaScript -->
                         </div>
                     </div>
                     <div class="temperature">
