@@ -3,6 +3,13 @@
 
 let cityList;
 let url;
+let cityId;
+let cityName;
+
+function loadCityList(obj) {
+    cityList = obj;
+    console.log("obj stringified = " + JSON.stringify(obj));
+}
 
 // Load the current according to the longitude and lattitude
 function loadCurrentTime() {
@@ -10,10 +17,14 @@ function loadCurrentTime() {
 }
 
 function loadPage() {
-    url = "https://api.openweathermap.org/data/2.5/weather?id=2643743&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+    // url = "https://people.rit.edu/rxz2801/230/project2/";
+    // getData(url, loadCityList);
+    cityId = 2643743;
+    cityName = "London,uk";
+    url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
     getData(url, loadPageCurrentWeather);
-    url = "https://api.openweathermap.org/data/2.5/forecast?id=2643743&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
-    getData(url, loadForecast);
+    url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+    getData(url, load12HrForecast);
 }
 
 function getData(url, jsonLoaded) {
@@ -41,12 +52,19 @@ function loadPageCurrentWeather(obj) {
     currentTemp.innerHTML = kelvinToCelcius(temp) + "°";
     let unit = document.createElement("span");
     unit.innerHTML = "C";
-    currentTemp.appendChild(unit);
+    if (currentTemp.childElementCount > 0)
+        currentTemp.children[0].innerHTML = unit.innerHTML;
+    else
+        currentTemp.appendChild(unit);
+
     let timeTemp = document.querySelector("#time-now");
     let span = document.createElement("span");
     span.innerHTML = kelvinToCelcius(temp) + "°C";
-    timeTemp.appendChild(span);
-
+    if (timeTemp.childElementCount > 0)
+        timeTemp.children[0].innerHTML = span.innerHTML;
+    else
+        timeTemp.appendChild(span);
+    debugger;
     // Set the current weather image
     let weatherId = obj.weather[0].icon;
     let weatherIcon = document.querySelector("#weatherIcon");
@@ -58,10 +76,6 @@ function loadPageCurrentWeather(obj) {
     currentWeather.innerHTML = weatherDescription;
 
     // debugger;
-}
-
-function loadCityList(obj) {
-
 }
 
 // Convert kelvin to fahrenheit
@@ -77,8 +91,8 @@ function kelvinToCelcius(value) {
 }
 
 // Get 12-hour forecast
-function loadForecast(obj) {
-    console.log("obj stringified = " + JSON.stringify(obj));
+function load12HrForecast(obj) {
+    // console.log("obj stringified = " + JSON.stringify(obj));
     let i;
     for (i = 0; i < 5; i++) {
         let forecastData = obj.list[i];     // Get the forecast data for each 3 hours
@@ -87,26 +101,95 @@ function loadForecast(obj) {
         timeTemp.innerHTML = formatDate(forecastData.dt_txt);
         let span = document.createElement("span");
         span.innerHTML = kelvinToCelcius(forecastData.main.temp) + "°C";
-        timeTemp.appendChild(span);
+        if (timeTemp.childElementCount > 0)
+            timeTemp.children[0].innerHTML = span.innerHTML;
+        else
+            timeTemp.appendChild(span);
     }
     // debugger;
 }
 
+function load24HrForecast(obj) {
+    // console.log("obj stringified = " + JSON.stringify(obj));
+    let i;
+    for (i = 0; i < 5; i++) {
+        let forecastData = obj.list[i * 2];     // Get the forecast data for each 6 hours
+        let id = "#time-" + (i + 1);
+        let timeTemp = document.querySelector(id);
+        timeTemp.innerHTML = formatDate(forecastData.dt_txt);
+        let span = document.createElement("span");
+        span.innerHTML = kelvinToCelcius(forecastData.main.temp) + "°C";
+        if (timeTemp.childElementCount > 0)
+            timeTemp.children[0].innerHTML = span.innerHTML;
+        else
+            timeTemp.appendChild(span);
+    }
+    // debugger;
+}
+
+function load3DForecast(obj) {
+    // console.log("obj stringified = " + JSON.stringify(obj));
+    let i;
+    for (i = 0; i < 5; i++) {
+        let forecastData = obj.list[i * 6];     // Get the forecast data for each 18 hours
+        let id = "#time-" + (i + 1);
+        let timeTemp = document.querySelector(id);
+        // fadeInOut(id, formatDate(forecastData.dt_txt));
+        timeTemp.innerHTML = formatDate(forecastData.dt_txt);
+        let span = document.createElement("span");
+        span.innerHTML = kelvinToCelcius(forecastData.main.temp) + "°C";
+        if (timeTemp.childElementCount > 0)
+            timeTemp.children[0].innerHTML = span.innerHTML;
+        else
+            timeTemp.appendChild(span);
+    }
+    // debugger;
+}
+
+// Create an animation for the text to fade in or out
+// function fadeInOut(originalTextId, newText) {
+//     $(originalTextId).animate({
+//         'opacity': 0
+//     }, 400, function () {
+//         $(this).html(newText).animate({ 'opacity': 1 }, 400);
+//     });
+// }
+
 // When the user enters a new location, reload the data for the entire web page
 function reloadData(element) {
     if (event.key === 'Enter') {
-        let id = element.value;
-        url = "https://api.openweathermap.org/data/2.5/forecast?id=" + id + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
-        getData(url, loadForecast);
+        // cityId = element.value;
+        cityName = element.value;
+        url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+        getData(url, loadPageCurrentWeather);
+        let activeButtonId = document.getElementsByClassName("active")[0].id;
+        switch (activeButtonId) {
+            case "next12Hrs":
+                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+                getData(url, load12HrForecast);
+                break;
+            case "next24Hrs":
+                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+                getData(url, load24HrForecast);
+                break;
+            case "threeDays":
+                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+                getData(url, load3DForecast);
+                break;
+        }
     }
 }
 
 // Input a date and returns a time with am/pm
 function formatDate(date) {
     let d = new Date(date);
+    let month = d.getMonth();
+    let dateDay = d.getDate();
     let hh = d.getHours();
     let m = d.getMinutes();
     let s = d.getSeconds();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let day = days[d.getDay()];
     let dd = "AM";
     let h = hh;
     if (h >= 12) {
@@ -118,10 +201,10 @@ function formatDate(date) {
     }
     m = m < 10 ? "0" + m : m;
     s = s < 10 ? "0" + s : s;
-    let pattern = new RegExp("0?" + hh + ":" + m + ":" + s);
-    let replacement = h + ":" + m;
-    replacement += " " + dd;
-    return replacement;
+    //let pattern = new RegExp("0?" + hh + ":" + m + ":" + s);
+    let replacement = h + ":" + m + " " + dd;
+    let output = day + " " + month + "/" + dateDay + " " + replacement;
+    return output;
 }
 
 // Using Google Time API
@@ -151,20 +234,24 @@ function buttonClick(button) {
 
     // Change the button to inactive
     let active = document.getElementsByClassName("active");
-    active[0].className = active[0].className.replace(" active", "");
+    if (active[0].id != buttonId) {
+        active[0].className = active[0].className.replace(" active", "");
 
-    // Change the previous active one to inactive and the clicked one to active
-    button.className += " active";
-
-    switch (buttonId){
-        case "next12Hrs": 
-
-        break;
-        case "next24Hrs": 
-
-        break;
-        case "threeDays": 
-
-        break;
+        // Change the previous active one to inactive and the clicked one to active
+        button.className += " active";
+        switch (buttonId) {
+            case "next12Hrs":
+                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+                getData(url, load12HrForecast);
+                break;
+            case "next24Hrs":
+                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+                getData(url, load24HrForecast);
+                break;
+            case "threeDays":
+                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+                getData(url, load3DForecast);
+                break;
+        }
     }
 }
