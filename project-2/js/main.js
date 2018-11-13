@@ -5,6 +5,7 @@ let url;
 let cityId;
 let cityName;
 let ifCelcius;
+let ifId = 0;
 
 function loadCityList(obj) {
     cityList = obj;
@@ -17,9 +18,9 @@ function loadPage() {
     cityId = 2643743;
     cityName = "London,uk";
     ifCelcius = false;
-    url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+    url = "https://api.openweathermap.org/data/2.5/weather?" + (ifId ? ("id=" + cityId) : ("q=" + cityName)) + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
     getData(url, loadPageCurrentWeather);
-    url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+    url = "https://api.openweathermap.org/data/2.5/forecast?" + (ifId ? ("id=" + cityId) : ("q=" + cityName)) + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
     getData(url, load12HrForecast);
 }
 
@@ -102,7 +103,7 @@ function fahrenheitToCelcius(value) {
 function loadForecast(obj, multiplier) {
     let i;
     for (i = 0; i < 5; i++) {
-        let forecastData = obj.list[i * multiplier];     // Get the forecast data for each 6 hours
+        let forecastData = obj.list[i * multiplier]; // Get the forecast data for each 6 hours
         let id = "#time-" + (i + 1);
         let timeTemp = document.querySelector(id);
         timeTemp.innerHTML = formatDate(forecastData.dt_txt);
@@ -146,11 +147,38 @@ function load3DForecast(obj) {
 
 // When the user enters a new location, reload the data for the entire web page
 function reloadData() {
-    // cityId = element.value;
     let element = document.querySelector("#locationInput");
-    cityName = element.value;   // Rochester,us
-    // debugger;
-    reloadTempData();
+    if (isNaN(element.value)) {     // If the input value does NOT contain a valid number
+        cityName = element.value; // Rochester,us
+        ifId = 0;
+    }
+    else {
+        cityId = element.value;
+        ifId = 1;
+    }
+    debugger;
+    reloadTempData(ifId);
+}
+
+// Reload all the temp data displayed on the website
+function reloadTempData(ifId) {
+    url = "https://api.openweathermap.org/data/2.5/weather?" + (ifId ? ("id=" + cityId) : ("q=" + cityName)) + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+    getData(url, loadPageCurrentWeather);
+    let activeButtonId = document.getElementsByClassName("active")[0].id;
+    switch (activeButtonId) {
+        case "next12Hrs":
+            url = "https://api.openweathermap.org/data/2.5/forecast?" + (ifId ? ("id=" + cityId) : ("q=" + cityName)) + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+            getData(url, load12HrForecast);
+            break;
+        case "next24Hrs":
+            url = "https://api.openweathermap.org/data/2.5/forecast?" + (ifId ? ("id=" + cityId) : ("q=" + cityName)) + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+            getData(url, load24HrForecast);
+            break;
+        case "threeDays":
+            url = "https://api.openweathermap.org/data/2.5/forecast?" + (ifId ? ("id=" + cityId) : ("q=" + cityName)) + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+            getData(url, load3DForecast);
+            break;
+    }
 }
 
 // Input a date and returns a time with am/pm
@@ -194,15 +222,15 @@ function buttonClick(button) {
         button.className += " active";
         switch (buttonId) {
             case "next12Hrs":
-                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+                url = "https://api.openweathermap.org/data/2.5/forecast?" + (ifId ? ("id=" + cityId) : ("q=" + cityName)) + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
                 getData(url, load12HrForecast);
                 break;
             case "next24Hrs":
-                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + (ifId ? ("id=" + cityId) : ("q=" + cityName)) + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
                 getData(url, load24HrForecast);
                 break;
             case "threeDays":
-                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + (ifId ? ("id=" + cityId) : ("q=" + cityName)) + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
                 getData(url, load3DForecast);
                 break;
         }
@@ -213,27 +241,6 @@ function buttonClick(button) {
 function tempUnitConverter() {
     ifCelcius = !ifCelcius;
     reloadTempData();
-}
-
-// Reload all the temp data displayed on the website
-function reloadTempData() {
-    url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
-    getData(url, loadPageCurrentWeather);
-    let activeButtonId = document.getElementsByClassName("active")[0].id;
-    switch (activeButtonId) {
-        case "next12Hrs":
-            url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
-            getData(url, load12HrForecast);
-            break;
-        case "next24Hrs":
-            url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
-            getData(url, load24HrForecast);
-            break;
-        case "threeDays":
-            url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
-            getData(url, load3DForecast);
-            break;
-    }
 }
 
 function setWeatherImage(weatherDescription) {
@@ -259,6 +266,9 @@ function setWeatherImage(weatherDescription) {
             break;
         case "Clouds":
             url += "clouds.jpg";
+            break;
+        default:
+            url += "fog.jpg";
             break;
     }
     document.querySelector(".city").style.backgroundImage = url;
