@@ -237,7 +237,7 @@ function reloadTempData() {
 }
 
 function setWeatherImage(weatherDescription) {
-    let url = "url(../images/";
+    let url = "url(images/";
     switch (weatherDescription) {
         case "Thunderstorm":
             url += "thunderstorm.jpg";

@@ -12,7 +12,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 body {
-    background: url("../images/night.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -52,7 +51,6 @@ h1 {
 .city {
     width: 60%;
     float: left;
-    background: url("../images/clouds.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-background-size: cover;

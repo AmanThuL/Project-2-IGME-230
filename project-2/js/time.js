@@ -23,7 +23,7 @@ function startTime() {
     let s = today.getSeconds();
 
     // Set background image in terms of time ( 7am to 7pm = morning )
-    let url = "url(../images/";
+    let url = "url(images/";
     url += (h > 7 && h < 19) ? "morning.jpg" : "night.jpg";
     document.body.style.backgroundImage = url;
 
