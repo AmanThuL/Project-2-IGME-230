@@ -34,11 +34,11 @@ body a {
 }
 
 h1 {
-    font-size: 50px;
-    font-weight: 400;
+    font-size: 60px;
+    font-weight: 700;
     color: #F9F9F9;
-    font-family: 'Oxygen', sans-serif;
-    letter-spacing: 7px;
+    font-family: 'Allerta Stencil', sans-serif;
+    letter-spacing: 8px;
     margin-top: 50px;
 }
 
@@ -52,7 +52,7 @@ h1 {
 .city {
     width: 60%;
     float: left;
-    background: url("../images/city.jpg");
+    background: url("../images/clouds.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
@@ -111,7 +111,7 @@ div#txt {
 
 .temperature p {
     font-family: 'Raleway', sans-serif;
-    font-size: 125px;
+    font-size: 115px;
     font-weight: 100;
 }
 
@@ -425,12 +425,14 @@ input:checked+.slider:after {
 @media screen and (max-width: 853px) {
     h1 {
         font-size: 45px;
+        font-family: 'Allerta Stencil', sans-serif;
     }
 }
 
 @media screen and (max-width: 800px) {
     h1 {
         font-size: 35px;
+        font-family: 'Allerta Stencil', sans-serif;
     }
     .temperature p {
         font-size: 100px;
@@ -459,6 +461,7 @@ input:checked+.slider:after {
     h1 {
         font-size: 40px;
         margin-top: 30px;
+        font-family: 'Allerta Stencil', sans-serif;
     }
     .container {
         width: 95%;
@@ -485,6 +488,7 @@ div#txt {
 @media screen and (max-width: 1800px) {
     h1 {
         font-size: 35px;
+        font-family: 'Allerta Stencil', sans-serif;
     }
     .city {
         width: 100%;

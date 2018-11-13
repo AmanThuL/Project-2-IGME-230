@@ -1,6 +1,5 @@
 // my id: d59e0af3c6a6d2980ef0ca4da30d9d55
 // api: OpenWeatherMap
-
 let cityList;
 let url;
 let cityId;
@@ -10,11 +9,6 @@ let ifCelcius;
 function loadCityList(obj) {
     cityList = obj;
     console.log("obj stringified = " + JSON.stringify(obj));
-}
-
-// Load the current according to the longitude and lattitude
-function loadCurrentTime() {
-
 }
 
 function loadPage() {
@@ -66,7 +60,6 @@ function loadPageCurrentWeather(obj) {
         timeTemp.children[0].innerHTML = span.innerHTML;
     else
         timeTemp.appendChild(span);
-    //debugger;
     // Set the current weather image
     let weatherId = obj.weather[0].icon;
     let weatherIcon = document.querySelector("#weatherIcon");
@@ -76,6 +69,7 @@ function loadPageCurrentWeather(obj) {
     let weatherDescription = obj.weather[0].main;
     let currentWeather = document.querySelector("#currentWeather");
     currentWeather.innerHTML = weatherDescription;
+    setWeatherImage(weatherDescription);
 
     // debugger;
 }
@@ -186,26 +180,6 @@ function formatDate(date) {
     return output;
 }
 
-// Using Google Time API
-// https://easycodestuff.blogspot.com/2015/05/get-time-zone-and-utc-from-latitude-and.html
-function getTimeUsingLatLng(lat, lng) {
-    var times_Stamp = (Math.round((new Date().getTime()) / 1000)).toString();
-    $.ajax({
-        url: "https://maps.googleapis.com/maps/api/timezone/json?location=" + lat + "," + lng + "&timestamp=" + times_Stamp,
-        cache: false,
-        type: "POST",
-        async: false,
-    }).done(function (response) {
-
-        if (response.timeZoneId != null) {
-            var Cur_Date = new Date();
-            var UTC = Cur_Date.getTime() + (Cur_Date.getTimezoneOffset() * 60000);
-            var Loc_Date = new Date(UTC + (1000 * response.rawOffset) + (1000 * response.dstOffset));
-            return Loc_Date.toLocaleString();
-        }
-    });
-}
-
 // When click button, change the data
 function buttonClick(button) {
     let buttonId = button.id;
@@ -260,4 +234,32 @@ function reloadTempData() {
             getData(url, load3DForecast);
             break;
     }
+}
+
+function setWeatherImage(weatherDescription) {
+    let url = "url(../images/";
+    switch (weatherDescription) {
+        case "Thunderstorm":
+            url += "thunderstorm.jpg";
+            break;
+        case "Drizzle":
+            url += "drizzle.jpg";
+            break;
+        case "Rain":
+            url += "rain.jpg";
+            break;
+        case "Snow":
+            url += "snow.jpg";
+            break;
+        case "Atmosphere":
+            url += "fog.jpg";
+            break;
+        case "Clear":
+            url += "clear.jpg";
+            break;
+        case "Clouds":
+            url += "clouds.jpg";
+            break;
+    }
+    document.querySelector(".city").style.backgroundImage = url;
 }
