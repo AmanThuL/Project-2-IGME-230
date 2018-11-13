@@ -35,9 +35,18 @@
                         <input type="text" id="locationInput" placeholder="Search Location...">
                         <button type="submit" onclick="reloadData()">
                             <i class="fa fa-search"></i>
-                        </button>                      
+                        </button>
                     </section>
                 </section>
+
+                <section class="temp-switch-container">
+                    <label class="switch">
+                        <input type="checkbox" id="celcius-slider" onclick="tempUnitConverter()">
+                        <span class="slider round"></span>
+                        <span>Celcius</span>
+                    </label>
+                </section>
+
                 <div class="title">
                     <!-- City Name -->
                     <h2 id="cityName">New York City</h2>

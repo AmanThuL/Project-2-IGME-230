@@ -1,187 +1,187 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{
-    margin:0;
-    padding:0;
-    border:0;
-    font-size:100%;
-    font:inherit;
-    vertical-align:baseline;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
 }
 
 body {
-background: url("../images/night.jpg");
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-background-size: cover;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-font-family: 'Open Sans', sans-serif;
-text-align: center;
+    background: url("../images/night.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
 }
 
 body a {
-transition: 0.5s all;
--webkit-transition: 0.5s all;
--moz-transition :0.5s all;
--o-transition: 0.5s all;
--ms-transition: 0.5s all;
-text-decoration: none;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    text-decoration: none;
 }
 
 h1 {
-font-size: 50px;
-font-weight: 400;
-color: #F9F9F9;
-font-family: 'Oxygen', sans-serif;
-letter-spacing: 7px;
-margin-top: 50px;
+    font-size: 50px;
+    font-weight: 400;
+    color: #F9F9F9;
+    font-family: 'Oxygen', sans-serif;
+    letter-spacing: 7px;
+    margin-top: 50px;
 }
 
 .container {
-display:inline-block;
-width: 65%;
-margin: 50px auto;
-background-color: rgba(0, 0, 0, 0.73);
+    display: inline-block;
+    width: 65%;
+    margin: 50px auto;
+    background-color: rgba(0, 0, 0, 0.73);
 }
 
 .city {
-width: 60%;
-float: left;
-background: url("../images/city.jpg");
-background-repeat: no-repeat;
-background-size: cover;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-min-height: 530px;
-position: relative;
+    width: 60%;
+    float: left;
+    background: url("../images/city.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    min-height: 530px;
+    position: relative;
 }
 
 .title {
-float: right;
-font-family: 'Oxygen', sans-serif;
-padding: 30px 30px 0 0;
+    float: right;
+    font-family: 'Oxygen', sans-serif;
+    padding: 30px 30px 0 0;
 }
 
 .title h2 {
-color: #FFF;
-font-size: 30px;
+    color: #FFF;
+    font-size: 30px;
 }
 
 .title h3 {
-font-size: 16px;
-font-weight: 600;
-color: #EEE;
-margin-top: 10px;
-text-align: right;
+    font-size: 16px;
+    font-weight: 600;
+    color: #EEE;
+    margin-top: 10px;
+    text-align: right;
 }
 
 .date-time {
-position: absolute;
-bottom: 0;
-color: #FFF;
-width: 90%;
-padding: 0 30px 10px 30px;
-font-family: 'Oxygen', sans-serif;
+    position: absolute;
+    bottom: 0;
+    color: #FFF;
+    width: 90%;
+    padding: 0 30px 10px 30px;
+    font-family: 'Oxygen', sans-serif;
 }
 
 div#txt {
-font-size: 35px;
-font-weight: 100;
-margin-bottom: 10px;
-letter-spacing: 1px;
+    font-size: 35px;
+    font-weight: 100;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .dmy {
-width: 50%;
-float: left;
-text-align: left;
-padding-top: 55px;
+    width: 50%;
+    float: left;
+    text-align: left;
+    padding-top: 55px;
 }
 
 .temperature {
-width: 50%;
-float: left;
+    width: 50%;
+    float: left;
 }
 
 .temperature p {
-font-family: 'Raleway', sans-serif;
-font-size: 125px;
-font-weight: 100;
+    font-family: 'Raleway', sans-serif;
+    font-size: 125px;
+    font-weight: 100;
 }
 
 .temperature p span {
-font-size: 50px;
-font-weight: 200;
+    font-size: 50px;
+    font-weight: 200;
 }
 
 .forecast {
-width: 40%;
-float: left;
+    width: 40%;
+    float: left;
 }
 
 .forecast-icon {
-margin: 25px 0;
+    margin: 25px 0;
 }
 
 .today-weather h3 {
-font-size: 50px;
-color: #FFF;
-width: 80%;
-margin: 0 auto 20px;
-padding-bottom: 10px;
-border-width: thin;
-border-bottom: 1px solid #EEE;
+    font-size: 50px;
+    color: #FFF;
+    width: 80%;
+    margin: 0 auto 20px;
+    padding-bottom: 10px;
+    border-width: thin;
+    border-bottom: 1px solid #EEE;
 }
 
 .today-weather ul li {
-list-style-type: none;
-width: 74%;
-margin: 0 auto;
-line-height: 39px;
-border-width: thin;
-border-bottom: 1px solid #777;
-color: #EEE;
-font-weight: 600;
-text-align: left;
-padding-left: 20px;
+    list-style-type: none;
+    width: 74%;
+    margin: 0 auto;
+    line-height: 39px;
+    border-width: thin;
+    border-bottom: 1px solid #777;
+    color: #EEE;
+    font-weight: 600;
+    text-align: left;
+    padding-left: 20px;
 }
 
 .today-weather ul li span {
-float: right;
-padding-right: 10px;
+    float: right;
+    padding-right: 10px;
 }
 
 .today-weather ul li:nth-child(6) {
-border-bottom: none;
+    border-bottom: none;
 }
 
 .footer {
-padding-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .copyright p {
-color: #FFF;
+    color: #FFF;
 }
 
 .copyright p a {
-color: #FFF;
+    color: #FFF;
 }
 
 .copyright p a:hover {
-color: #FFEB3B;
+    color: #FFEB3B;
 }
 
-#navBar{
-    display:flex;
+#navBar {
+    display: flex;
 }
 
-a.buttons{
+a.buttons {
     color: #644cad;
     text-decoration: none;
     -webkit-transition: 0.3s all ease;
@@ -196,7 +196,7 @@ a.buttons:active {
     color: #FFFFFF;
 }
 
-.buttons.active{
+.buttons.active {
     color: #FFFFFF;
     background-color: #644cad;
 }
@@ -247,16 +247,16 @@ a.buttons:active {
     opacity: 1;
 }
 
-#searchAndWeather{
-    width:100%;
+#searchAndWeather {
+    width: 100%;
 }
 
 .topnav {
     float: left;
     overflow: hidden;
     width: 270px;
-  }
-  
+}
+
 .topnav a {
     float: left;
     display: block;
@@ -266,24 +266,24 @@ a.buttons:active {
     text-decoration: none;
     font-size: 17px;
 }
-  
+
 .topnav a:hover {
     background-color: #ddd;
     color: black;
 }
-  
+
 .topnav a.active {
     background-color: #2196F3;
     color: white;
 }
-  
+
 .topnav input[type=text] {
-    float:left;
+    float: left;
     padding: 6px;
     border: none;
-    font-size: 17px; 
+    font-size: 17px;
 }
-  
+
 .topnav .search-container button {
     float: left;
     padding: 6px 10px;
@@ -291,111 +291,180 @@ a.buttons:active {
     border: none;
     cursor: pointer;
 }
-  
+
 .topnav .search-container button:hover {
     background: #ccc;
 }
 
-.fa-search-plus:before{
-    content:"\f00e"
+.fa-search-plus:before {
+    content: "\f00e"
 }
 
-.fa-search-minus:before{
-    content:"\f010"
+.fa-search-minus:before {
+    content: "\f010"
 }
 
-.fa-search:before{
-    content:"\f002"
+.fa-search:before {
+    content: "\f002"
 }
 
-#searchIcon{
+#searchIcon {
     background-image: url("../images/night.jpg");
 }
 
+/* Rounded slider CSS */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #644cad;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #644cad;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(66px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.slider:after {
+    content: 'Celcius OFF';
+    color: white;
+    display: block;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 10px;
+    font-family: Verdana, sans-serif;
+}
+
+input:checked+.slider:after {
+    content: 'Celcius ON';
+}
+
+/* End of rounded slider */
 
 /*-- Responsive Code --*/
-@media screen and (max-width: 1920px) {
-.container {
-    width: 50%;
-}
-}
 
+@media screen and (max-width: 1920px) {
+    .container {
+        width: 50%;
+    }
+}
 
 @media screen and (max-width: 1440px) {
-.container {
-    width: 55%;
+    .container {
+        width: 55%;
+    }
 }
-}
-
 
 @media screen and (max-width: 1280px) {
-.container {
-    width: 60%;
+    .container {
+        width: 60%;
+    }
 }
-}
-
 
 @media screen and (max-width: 1024px) {
-.container {
-    width: 75%;
+    .container {
+        width: 75%;
+    }
 }
-}
-
 
 @media screen and (max-width: 966px) {
-.container {
-    width: 90%;
+    .container {
+        width: 90%;
+    }
 }
-}
-
 
 @media screen and (max-width: 853px) {
-h1 {
-    font-size: 45px;
+    h1 {
+        font-size: 45px;
+    }
 }
-}
-
 
 @media screen and (max-width: 800px) {
-h1 {
-    font-size: 35px;
+    h1 {
+        font-size: 35px;
+    }
+    .temperature p {
+        font-size: 100px;
+    }
+    .dmy {
+        padding-top: 25px;
+    }
 }
-.temperature p {
-    font-size: 100px;
-}
-.dmy {
-    padding-top: 25px;
-}
-}
-
 
 @media screen and (max-width: 736px) {
-.temperature p {
-    font-size: 80px;
+    .temperature p {
+        font-size: 80px;
+    }
+    .dmy {
+        padding-top: 10px;
+    }
+    div#txt {
+        font-size: 30px;
+    }
+    .forecast-icon img {
+        width: 110px;
+    }
 }
-.dmy {
-    padding-top: 10px;
-}
-div#txt {
-    font-size: 30px;
-}
-.forecast-icon img {
-    width: 110px;
-}
-}
-
 
 @media screen and (max-width: 667px) {
-h1 {
-    font-size: 40px;
-    margin-top: 30px;
+    h1 {
+        font-size: 40px;
+        margin-top: 30px;
+    }
+    .container {
+        width: 95%;
+        margin-top: 30px;
+    }
 }
-.container {
-    width: 95%;
-    margin-top: 30px;
-}
-}
-
 
 /* @media screen and (max-width: 640px) {
 h1 {
@@ -413,115 +482,112 @@ div#txt {
 }
 } */
 
-
 @media screen and (max-width: 1800px) {
-h1 {
-    font-size: 35px;
+    h1 {
+        font-size: 35px;
+    }
+    .city {
+        width: 100%;
+        min-height: 300px;
+    }
+    .temperature {
+        text-align: right;
+    }
+    .temperature p {
+        font-size: 100px;
+    }
+    .dmy {
+        padding-top: 35px;
+    }
+    .forecast-icon {
+        margin: 10px 0;
+    }
+    .forecast {
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .copyright {
+        padding-bottom: 20px;
+    }
+    .copyright p {
+        line-height: 30px;
+        font-size: 14px;
+    }
 }
-.city {
-    width: 100%;
-    min-height: 300px;
-}
-.temperature {
-    text-align: right;
-}
-.temperature p {
-    font-size: 100px;
-}
-.dmy {
-    padding-top: 35px;
-}
-.forecast-icon {
-    margin: 10px 0;
-}
-.forecast {
-    width: 100%;
-    padding-bottom: 30px;
-}
-.copyright {
-    padding-bottom: 20px;
-}
-.copyright p {
-    line-height: 30px;
-    font-size: 14px;
-}
-}
-
 
 @media screen and (max-width: 480px) {
-h1 {
-    font-size: 28px;
-    letter-spacing: 2px;
+    h1 {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+    .container {
+        margin-bottom: 20px;
+    }
+    .forecast-icon {
+        margin: 40px 0 10px;
+    }
+    .forecast-icon img {
+        width: 100px;
+    }
+    .today-weather h3 {
+        font-size: 40px;
+    }
+    .city {
+        min-height: 450px;
+    }
+    .title h2 {
+        font-size: 25px;
+    }
+    .title h3 {
+        font-size: 14px;
+    }
+    .date-time {
+        width: 100%;
+        padding: 0;
+    }
+    .dmy {
+        padding: 0;
+        margin-bottom: 35px;
+        text-align: center;
+        width: 100%;
+    }
+    div#txt {
+        font-size: 30px;
+    }
+    .date {
+        font-size: 22px;
+    }
+    .temperature {
+        text-align: center;
+        width: 100%;
+    }
+    .copyright {
+        padding: 20px;
+    }
+    .temperature p {
+        font-size: 60px;
+        padding-bottom: 15px;
+    }
+    .forecast-icon img {
+        width: 65px;
+    }
+    .today-weather h3 {
+        font-size: 30px;
+    }
+    .copyright p {
+        line-height: 25px;
+        font-size: 13px;
+    }
 }
-.container {
-    margin-bottom: 20px;
-}
-.forecast-icon {
-    margin: 40px 0 10px;
-}
-.forecast-icon img {
-    width: 100px;
-}
-.today-weather h3 {
-    font-size: 40px;
-}
-.city {
-    min-height: 450px;
-}
-.title h2 {
-    font-size: 25px;
-}
-.title h3 {
-    font-size: 14px;
-}
-.date-time {
-    width: 100%;
-    padding: 0;
-}
-.dmy {
-    padding: 0;
-    margin-bottom: 35px;
-    text-align: center;
-    width: 100%;
-}
-div#txt {
-    font-size: 30px;
-}
-.date {
-    font-size: 22px;
-}
-.temperature {
-    text-align: center;
-    width: 100%;
-}
-.copyright {
-    padding: 20px;
-}
-.temperature p {
-    font-size: 60px;
-    padding-bottom: 15px;
-}
-.forecast-icon img {
-    width: 65px;
-}
-.today-weather h3 {
-    font-size: 30px;
-}
-.copyright p {
-    line-height: 25px;
-    font-size: 13px;
-}
-}
-
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+
 @media screen and (max-width: 600px) {
-    .topnav{
-        display:inline-block;
+    .topnav {
+        display: inline-block;
         margin-bottom: 0%;
         overflow: hidden;
     }
-
     .topnav a, .topnav input[type=text] {
         float: none;
         display: block;
