@@ -71,8 +71,6 @@ function loadPageCurrentWeather(obj) {
     let currentWeather = document.querySelector("#currentWeather");
     currentWeather.innerHTML = weatherDescription;
     setWeatherImage(weatherDescription);
-
-    // debugger;
 }
 
 // Convert kelvin to fahrenheit
@@ -148,15 +146,13 @@ function load3DForecast(obj) {
 // When the user enters a new location, reload the data for the entire web page
 function reloadData() {
     let element = document.querySelector("#locationInput");
-    if (isNaN(element.value)) {     // If the input value does NOT contain a valid number
+    if (isNaN(element.value)) { // If the input value does NOT contain a valid number
         cityName = element.value; // Rochester,us
         ifId = 0;
-    }
-    else {
+    } else {
         cityId = element.value;
         ifId = 1;
     }
-    debugger;
     reloadTempData(ifId);
 }
 
@@ -226,11 +222,11 @@ function buttonClick(button) {
                 getData(url, load12HrForecast);
                 break;
             case "next24Hrs":
-                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + (ifId ? ("id=" + cityId) : ("q=" + cityName)) + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+                url = "https://api.openweathermap.org/data/2.5/forecast?" + (ifId ? ("id=" + cityId) : ("q=" + cityName)) + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
                 getData(url, load24HrForecast);
                 break;
             case "threeDays":
-                url = "https://api.openweathermap.org/data/2.5/forecast?q=" + (ifId ? ("id=" + cityId) : ("q=" + cityName)) + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
+                url = "https://api.openweathermap.org/data/2.5/forecast?" + (ifId ? ("id=" + cityId) : ("q=" + cityName)) + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
                 getData(url, load3DForecast);
                 break;
         }
@@ -240,7 +236,7 @@ function buttonClick(button) {
 // Slider onclick function
 function tempUnitConverter() {
     ifCelcius = !ifCelcius;
-    reloadTempData();
+    reloadTempData(ifId);
 }
 
 function setWeatherImage(weatherDescription) {
