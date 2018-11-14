@@ -6,6 +6,8 @@ let cityId;
 let cityName;
 let ifCelcius;
 let ifId = 0;
+const prefix = "project2-";
+const historyKey = prefix + "history";
 
 function loadCityList(obj) {
     cityList = obj;
@@ -22,6 +24,13 @@ function loadPage() {
     getData(url, loadPageCurrentWeather);
     url = "https://api.openweathermap.org/data/2.5/forecast?" + (ifId ? ("id=" + cityId) : ("q=" + cityName)) + "&APPID=d59e0af3c6a6d2980ef0ca4da30d9d55";
     getData(url, load12HrForecast);
+
+    // Fill the search bar with the last user's input if there is any
+    let searchBar = document.querySelector("#locationInput");
+    let storageData = loadArray();
+    if (storageData != null) {
+        searchBar.value = storageData[storageData.length - 1];
+    }
 }
 
 function getData(url, jsonLoaded) {
@@ -143,9 +152,21 @@ function load3DForecast(obj) {
 //     });
 // }
 
-// When the user enters a new location, reload the data for the entire web page
+// Submit button onclick event: When the user enters a new location, reload the data for the entire web page
 function reloadData() {
     let element = document.querySelector("#locationInput");
+
+    // Store user's input into the local storage
+    let arrayData = loadArray();
+    if (arrayData != null) {
+        arrayData.push(element.value);
+        saveArray(arrayData);    
+    }
+    else {
+        arrayData = [element.value];
+        saveArray(arrayData);
+    }
+
     if (isNaN(element.value)) { // If the input value does NOT contain a valid number
         cityName = element.value; // Rochester,us
         ifId = 0;
@@ -204,7 +225,7 @@ function formatDate(date) {
     return output;
 }
 
-// When click button, change the data
+// When click nav bar button, change the data
 function buttonClick(button) {
     let buttonId = button.id;
     let navBar = document.querySelector("#navBar");
@@ -252,7 +273,7 @@ function setWeatherImage(weatherDescription) {
             url += "rain.jpg";
             break;
         case "Snow":
-            url += "snow.jpg";
+            url += "snow.png";
             break;
         case "Atmosphere":
             url += "fog.jpg";
@@ -261,7 +282,7 @@ function setWeatherImage(weatherDescription) {
             url += "clear.jpg";
             break;
         case "Clouds":
-            url += "clouds.jpg";
+            url += "clouds.png";
             break;
         default:
             url += "fog.jpg";
@@ -270,17 +291,12 @@ function setWeatherImage(weatherDescription) {
     document.querySelector(".city").style.backgroundImage = url;
 }
 
-
 // Web Storage
-// function saveArray()
-// {
-//     let history 
-//     localStorage.setItem(, history);
-// }
+function saveArray(arrayData) {
+    localStorage.setItem(historyKey, JSON.stringify(arrayData));
+}
 
-// function loadArray()
-// {
-
-//     let history = localStorage.getItem()
-//      = JSON.parse();
-// }
+function loadArray() {
+    let retrievedData = localStorage.getItem(historyKey);
+    return JSON.parse(retrievedData);
+}
