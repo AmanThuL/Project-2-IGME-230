@@ -165,7 +165,7 @@ div#txt {
     border-style: outset;
     opacity: 0.1;
     padding: 20px;
-    margin:0 auto;
+    margin: 0 auto;
     transition-duration: 1s;
     -webkit-transition-duration: 1s;
     font-family: 'Allerta Stencil', sans-serif;
@@ -401,16 +401,20 @@ input:checked+.slider:after {
     color: white;
 }
 
+.empty {
+    display: none;
+}
+
 /* End of rounded slider */
 
 /*-- Responsive Code --*/
 
 @media screen and (max-width: 1920px) {
     .container {
-        width: 50%;
+        width: 45%;
     }
-    .footer{
-        width: 50%;
+    .footer {
+        width: 45%;
     }
 }
 
@@ -418,7 +422,7 @@ input:checked+.slider:after {
     .container {
         width: 55%;
     }
-    .footer{
+    .footer {
         width: 55%;
     }
 }
@@ -427,7 +431,7 @@ input:checked+.slider:after {
     .container {
         width: 60%;
     }
-    .footer{
+    .footer {
         width: 60%;
     }
 }
@@ -436,7 +440,7 @@ input:checked+.slider:after {
     .container {
         width: 75%;
     }
-    .footer{
+    .footer {
         width: 75%;
     }
 }
@@ -445,7 +449,7 @@ input:checked+.slider:after {
     .container {
         width: 90%;
     }
-    .footer{
+    .footer {
         width: 90%;
     }
 }
@@ -469,7 +473,7 @@ input:checked+.slider:after {
         padding-top: 25px;
     }
     .footer {
-        width:80%;
+        width: 80%;
     }
 }
 
@@ -487,7 +491,7 @@ input:checked+.slider:after {
         width: 110px;
     }
     .footer {
-        width:85%;
+        width: 85%;
     }
 }
 
@@ -502,7 +506,7 @@ input:checked+.slider:after {
         margin-top: 30px;
     }
     .footer {
-        width:85%;
+        width: 85%;
     }
 }
 
@@ -533,14 +537,12 @@ input:checked+.slider:after {
     }
     .copyright {
         padding-bottom: 20px;
-        
     }
     .copyright p {
         line-height: 30px;
         font-size: 14px;
     }
 }
-
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 
@@ -562,7 +564,6 @@ input:checked+.slider:after {
         border: 1px solid #cccccc;
     }
 }
-
 
 @media screen and (max-width: 480px) {
     h1 {
@@ -627,8 +628,7 @@ input:checked+.slider:after {
         line-height: 25px;
         font-size: 13px;
     }
-    .footer{
-        width:83%;
+    .footer {
+        width: 83%;
     }
 }
-
