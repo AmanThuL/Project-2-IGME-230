@@ -83,25 +83,13 @@ function loadPageCurrentWeather(obj) {
 // Convert kelvin to fahrenheit
 function kelvinToFahrenheit(value) {
     value = parseFloat(value);
-    return ((value - 273.15) * 1.8 + 32).toPrecision(2);
+    return Math.round((value - 273.15) * 1.8 + 32);
 }
 
 // Convert kelvin to celcius
 function kelvinToCelcius(value) {
     value = parseFloat(value);
-    return (value - 273.15).toPrecision(2);
-}
-
-// Convert celcius to fahrenheit
-function celciusToFahrenheit(value) {
-    value = parseFloat(value);
-    return (value * 9.0 / 5.0 + 32).toPrecision(2);
-}
-
-// Convert fahrenheit to celcius
-function fahrenheitToCelcius(value) {
-    value = parseFloat(value);
-    return ((value - 32) * 5.0 / 9.0).toPrecision(2);
+    return Math.round((value - 273.15));
 }
 
 // Factored code from the following three loadForecast functions
