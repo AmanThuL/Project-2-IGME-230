@@ -406,6 +406,7 @@ a.buttons:active {
     display: inline-block;
     width: 100px;
     height: 34px;
+    float:right;
 }
 
 .switch input {
