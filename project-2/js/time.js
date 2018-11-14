@@ -16,6 +16,7 @@ let dayarray = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
 
 let montharray = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
 
+// Load the eastern standard time when onLoad is called
 function startTime() {
     let today = new Date();
     let h = today.getHours();
@@ -36,6 +37,7 @@ function startTime() {
     let t = setTimeout(startTime, 500);
 }
 
+// Check if the displaying time needs an extra 0 in front
 function checkTime(i) {
     if (i < 10) { i = "0" + i }; // add zero in front of numbers < 10
     return i;

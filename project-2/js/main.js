@@ -9,11 +9,7 @@ let ifId = 0;
 const prefix = "project2-";
 const historyKey = prefix + "history";
 
-function loadCityList(obj) {
-    cityList = obj;
-    console.log("obj stringified = " + JSON.stringify(obj));
-}
-
+// First-time load the page data
 function loadPage() {
     // url = "https://people.rit.edu/rxz2801/230/project2/";
     // getData(url, loadCityList);
@@ -33,6 +29,7 @@ function loadPage() {
     }
 }
 
+// JSON file loading function using ajax
 function getData(url, jsonLoaded) {
     $.ajax({
         dataType: "json",
@@ -42,6 +39,7 @@ function getData(url, jsonLoaded) {
     })
 }
 
+// Load the current weather information from API
 function loadPageCurrentWeather(obj) {
     // console.log("obj = " + obj);
     // console.log("obj stringified = " + JSON.stringify(obj));
@@ -131,26 +129,19 @@ function load12HrForecast(obj) {
     // debugger;
 }
 
+// Get 24-hour forecast
 function load24HrForecast(obj) {
     // console.log("obj stringified = " + JSON.stringify(obj));
     loadForecast(obj, 2);
     // debugger;
 }
 
+// Get 3-day forecast
 function load3DForecast(obj) {
     // console.log("obj stringified = " + JSON.stringify(obj));
     loadForecast(obj, 6);
     // debugger;
 }
-
-// Create an animation for the text to fade in or out
-// function fadeInOut(originalTextId, newText) {
-//     $(originalTextId).animate({
-//         'opacity': 0
-//     }, 400, function () {
-//         $(this).html(newText).animate({ 'opacity': 1 }, 400);
-//     });
-// }
 
 // Submit button onclick event: When the user enters a new location, reload the data for the entire web page
 function reloadData() {
@@ -260,6 +251,7 @@ function tempUnitConverter() {
     reloadTempData(ifId);
 }
 
+// Change the background image according to the current weather condition
 function setWeatherImage(weatherDescription) {
     let url = "url(images/";
     switch (weatherDescription) {
@@ -291,11 +283,13 @@ function setWeatherImage(weatherDescription) {
     document.querySelector(".city").style.backgroundImage = url;
 }
 
-// Web Storage
+// Web Storage functions
+// Save the array into local storage
 function saveArray(arrayData) {
     localStorage.setItem(historyKey, JSON.stringify(arrayData));
 }
 
+// Retrieve the array from local storage
 function loadArray() {
     let retrievedData = localStorage.getItem(historyKey);
     return JSON.parse(retrievedData);
