@@ -405,6 +405,30 @@ input:checked+.slider:after {
     display: none;
 }
 
+.doc {
+    border: 4px white;
+    border-style: outset;
+    background: rgba(255, 255, 255, 0.7);
+    width: 50%;
+    opacity: 0.5;
+}
+
+.doc:hover {
+    opacity: 1;
+}
+
+li {
+    list-style-type: none;
+}
+
+#navlist {
+    font-size: 300%;
+}
+
+.section h2 {
+    font-size: 200%;
+}
+
 /* End of rounded slider */
 
 /*-- Responsive Code --*/

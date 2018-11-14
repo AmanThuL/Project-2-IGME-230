@@ -32,9 +32,11 @@ function startTime() {
     m = checkTime(m);
     s = checkTime(s);
 
-    document.getElementById('txt').innerHTML =
-        h + ":" + m + ":" + s;
-    let t = setTimeout(startTime, 500);
+    let txt = document.querySelector("#txt");
+    if (txt != null) {
+        txt.innerHTML = h + ":" + m + ":" + s;
+        let t = setTimeout(startTime, 500);
+    }
 }
 
 // Check if the displaying time needs an extra 0 in front
