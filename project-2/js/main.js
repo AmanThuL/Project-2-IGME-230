@@ -269,3 +269,18 @@ function setWeatherImage(weatherDescription) {
     }
     document.querySelector(".city").style.backgroundImage = url;
 }
+
+
+// Web Storage
+// function saveArray()
+// {
+//     let history 
+//     localStorage.setItem(, history);
+// }
+
+// function loadArray()
+// {
+
+//     let history = localStorage.getItem()
+//      = JSON.parse();
+// }
